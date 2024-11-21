@@ -8,7 +8,7 @@ const MONGO_URI = `mongodb+srv://damnanuj:Anujatlas@cluster0.w7mdapr.mongodb.net
 
 //middleware
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.json())
+app.use(express.json())
 
 // db Connect
 
@@ -54,7 +54,7 @@ app.get("/user-form", (req, res) => {
 });
 
 app.post("/submit-form", (req, res) => {
-  console.log(req.body);
+
   const { name, email, password } = req.body;
   console.log(name, email, password);
   return res.send("form submitted successfully");
